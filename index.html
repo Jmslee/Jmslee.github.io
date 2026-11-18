@@ -941,8 +941,34 @@
 
   <script src="script.js"></script>
   <!-- Cloudflare Web Analytics -->
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token":"f99a14a9bc4442069cf3a3becf3f698b"}'></script>
+  <script>
+    (() => {
+      const url = new URL(window.location.href);
+      const preference = url.searchParams.get("analytics");
+      const storageKey = "jmslee.analytics";
+      let analyticsDisabled = preference === "off";
+
+      try {
+        if (analyticsDisabled || preference === "on") {
+          window.localStorage.setItem(storageKey, preference);
+          url.searchParams.delete("analytics");
+          window.history.replaceState(window.history.state, "", url);
+        } else {
+          analyticsDisabled = window.localStorage.getItem(storageKey) === "off";
+        }
+      } catch {
+        // An explicit choice still applies to this page when storage is blocked.
+      }
+
+      if (analyticsDisabled) return;
+
+      const beacon = document.createElement("script");
+      beacon.type = "module";
+      beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      beacon.setAttribute("data-cf-beacon", '{"token":"f99a14a9bc4442069cf3a3becf3f698b"}');
+      document.body.append(beacon);
+    })();
+  </script>
   <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
