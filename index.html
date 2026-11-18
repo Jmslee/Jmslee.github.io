@@ -41,6 +41,15 @@
       border-bottom: 1px solid var(--intro-border);
     }
 
+    #analytics-status {
+      max-width: 42rem;
+      margin-bottom: 1.1rem;
+      padding: 0.65rem 0.9rem;
+      border-left: 2px solid var(--intro-accent);
+      background: rgba(255, 255, 255, 0.07);
+      line-height: 1.45;
+    }
+
     .profile-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(14rem, 20.5rem);
@@ -206,6 +215,7 @@
   <!-- Hero -->
   <header id="hero">
     <div class="container">
+      <p id="analytics-status" role="status" hidden></p>
       <div class="profile-grid">
         <div class="profile-name">
           <p class="profile-kicker">Northwestern University</p>
@@ -946,11 +956,14 @@
       const url = new URL(window.location.href);
       const preference = url.searchParams.get("analytics");
       const storageKey = "jmslee.analytics";
+      const settingChanged = preference === "off" || preference === "on";
       let analyticsDisabled = preference === "off";
+      let preferenceSaved = false;
 
       try {
-        if (analyticsDisabled || preference === "on") {
+        if (settingChanged) {
           window.localStorage.setItem(storageKey, preference);
+          preferenceSaved = true;
           url.searchParams.delete("analytics");
           window.history.replaceState(window.history.state, "", url);
         } else {
@@ -958,6 +971,14 @@
         }
       } catch {
         // An explicit choice still applies to this page when storage is blocked.
+      }
+
+      if (settingChanged) {
+        const status = document.getElementById("analytics-status");
+        status.hidden = false;
+        status.textContent = preferenceSaved
+          ? `Analytics is ${preference} in this browser.`
+          : `Analytics is ${preference} for this visit. Your browser blocked saving the setting.`;
       }
 
       if (analyticsDisabled) return;
