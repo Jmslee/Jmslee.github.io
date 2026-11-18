@@ -3,11 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Jaehoon Lee</title>
+  <title>James Jaehoon Lee | Northwestern University</title>
+  <meta name="description" content="James Jaehoon Lee uses network science as an interdisciplinary method to model how ideas connect in language and how people interact across societies and over time. Associate Professor at Medill and Director of Research at Knight Lab.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="James Jaehoon Lee | Northwestern University">
+  <meta property="og:description" content="I use network science as an interdisciplinary method to model how ideas connect in language and how people interact across societies and over time.">
+  <meta property="og:url" content="https://jmslee.github.io/">
+  <meta property="og:image" content="https://jmslee.github.io/assets/headshot.png">
+  <meta property="og:image:alt" content="Portrait of James Jaehoon Lee">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #hero {
+      min-height: 0;
+      padding: calc(var(--nav-height) + 3.5rem) 0 3.5rem;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .hero-tagline {
+      max-width: 34rem;
+      color: var(--color-hero-text);
+      font-size: 1.4rem;
+      line-height: 1.35;
+      margin: 1.2rem 0 1.75rem;
+    }
+
+    .hero-actions {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-actions .btn-primary {
+      color: var(--color-hero-bg);
+      background: #e1b658;
+    }
+
+    .hero-actions .btn-primary:hover {
+      background: #f0cc7b;
+    }
+
+    .speaker-kit {
+      max-width: 46rem;
+      margin-top: 2.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .speaker-kit h3 {
+      color: var(--color-hero-text);
+      font: 600 1.6rem/1.3 var(--font-serif);
+      margin-bottom: 0.6rem;
+    }
+
+    .speaker-kit p {
+      color: rgba(240, 237, 232, 0.85);
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 950px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: rgba(26, 31, 46, 0.98);
+        flex-direction: column;
+        padding: 1rem 2rem;
+        gap: 0.8rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+    }
+
+    @media (max-width: 900px) {
+      #hero { padding: calc(var(--nav-height) + 1.55rem) 0 2rem; }
+      .hero-content { gap: 0.9rem; padding: 0 1.15rem; }
+      .hero-image img { width: 120px; height: 120px; }
+      .hero-kicker { margin-bottom: 0.45rem; }
+      .hero-text h1 { margin-bottom: 0.55rem; }
+      .hero-subtitle { font-size: 0.95rem; line-height: 1.48; }
+      .hero-tagline { font-size: 1.21rem; margin: 0.85rem auto 1.2rem; }
+      .hero-actions .btn { padding: 0.65rem 1.2rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -39,14 +123,14 @@
         <p class="hero-subtitle">Associate Professor, Medill School of Journalism<br>
         Director of Research, Knight Lab<br>
         Associate University Librarian for Academic Innovation</p>
-        <p class="hero-tagline">Journalism &middot; Network Science &middot; AI &middot; Cultural Archives</p>
+        <p class="hero-tagline">I use network science as an interdisciplinary method to model how ideas connect in language and how people interact across societies and over time.</p>
         <div class="hero-actions">
-          <a href="assets/JLee_CV.pdf" class="btn btn-primary" target="_blank">Download CV</a>
-          <a href="#publications" class="btn btn-secondary">View Publications</a>
+          <a href="mailto:jmslee@northwestern.edu" class="btn btn-primary">Email me</a>
+          <a href="assets/JLee_CV.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="assets/headshot.png" alt="James Jaehoon Lee">
+        <img src="assets/headshot.png" alt="James Jaehoon Lee" width="280" height="280">
       </div>
     </div>
   </header>
@@ -59,7 +143,7 @@
         <div class="about-text">
           <p>My research examines how information moves through today's fragmented digital platforms understood as complex systems, and how news organizations and journalists connect communities that would otherwise have little contact with one another. My work brings together journalism, network science, and artificial intelligence. Much of my recent research develops the idea that journalism functions as a form of brokerage, carrying knowledge across the structural gaps between disconnected publics, and I use network analysis and machine learning to study that process at scale, from the news culture of Elizabethan England to contemporary social media.</p>
           <p><em>Social Media and Digital Politics: Networked Reason in an Age of Digital Emotion</em> (Routledge, 2025), written with Jeffrey Layne Blevins, examines how the architecture of social media platforms shapes political discourse. In 2026 it received the Tankard Book Award from the Association for Education in Journalism and Mass Communication, which recognizes the most outstanding book in the field of journalism and communication. My next book, <em>Shakespeare in the News</em> (Routledge, forthcoming 2026), uses network science to offer a new history of journalism, tracing how news organizations from the reign of Elizabeth I to the era of digital platforms have drawn on a shared cultural reference point to make political events intelligible to their readers.</p>
-          <p>I have applied these methods across a number of fields, including journalism and social media studies, information science, biomedical informatics, computational law, environmental history, and the digital humanities, where my career began. My articles have appeared in the <em>Harvard Data Science Review</em>, <em>New Media and Society</em>, <em>Applied Linguistics</em>, the <em>Journal of Hospital Medicine</em>, <em>PMLA</em>, and the <em>Stanford Journal of Law, Economics, and Business</em>, as well as in the proceedings of the AI for Libraries, Archives, and Museums conference, published by the British Library and the Library of Congress. I serve as an associate editor of the <em>Harvard Data Science Review</em>.</p>
+          <p>I have applied these methods across a number of fields, including journalism and social media studies, information science, biomedical informatics, computational law, environmental history, and the digital humanities, where my career began. My articles have appeared in the <em>Harvard Data Science Review</em>, <em>New Media and Society</em>, <em>Applied Linguistics</em>, the <em>Journal of Hospital Medicine</em>, <em>PMLA</em>, and the <em>Stanford Journal of Law, Economics, and Business</em>, as well as in the proceedings of the AI for Libraries, Archives, and Museums conference, published by the British Library and the Library of Congress. As part of my commitment to interdisciplinary data science, I serve as an associate editor of the <em>Harvard Data Science Review</em>.</p>
           <p>As Director of Research at Medill's Knight Lab and Associate University Librarian for Academic Innovation at Northwestern, I also direct projects that make large archives available to researchers and journalists. These include a public research platform for the largest archive of United States environmental impact statements and the <a href="https://modelofmodels.io">Model of Models (MoM)</a>, an ensemble AI platform that presents complex models as explorable networks. This work has been supported by more than $5 million in funding from the Andrew W. Mellon Foundation, the Institute of Museum and Library Services, and the National Science Foundation.</p>
         </div>
         <div class="about-details">
@@ -729,10 +813,19 @@
         </div>
         <div class="contact-card">
           <h3>Affiliations</h3>
-          <p><a href="https://www.medill.northwestern.edu/" target="_blank">Medill School of Journalism</a><br>
+          <p><a href="https://www.medill.northwestern.edu/directory/faculty/james-lee.html" target="_blank" rel="noopener">Medill faculty profile</a><br>
           <a href="https://www.library.northwestern.edu/" target="_blank">Northwestern University Libraries</a><br>
           <a href="https://knightlab.northwestern.edu/" target="_blank">Knight Lab</a></p>
         </div>
+      </div>
+      <div class="speaker-kit" id="speaker-bio">
+        <h3>Speaker bio</h3>
+        <p>James Jaehoon Lee is an associate professor at Northwestern University&rsquo;s Medill School of Journalism,
+          director of research at Knight Lab, and associate university librarian for academic innovation.
+          He combines network science and language modeling to build and analyze networks of ideas, topics, and people across disciplines and historical periods.
+          His book <em>Social Media and Digital Politics</em>, coauthored with Jeffrey Layne Blevins,
+          won the 2026 Tankard Book Award. He is an associate editor of the <em>Harvard Data Science Review</em>.</p>
+        <a class="btn btn-secondary" href="assets/headshot.png" download="James-Jaehoon-Lee-headshot.png">Download headshot</a>
       </div>
     </div>
   </section>
